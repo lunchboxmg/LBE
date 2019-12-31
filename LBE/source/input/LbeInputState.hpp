@@ -1,8 +1,13 @@
 #pragma once
 
+#include <iostream>
+#include <bitset>
+
+#include "LbeExports.hpp"
+
 namespace LBE
 {
-    struct InputState
+    struct LBE_API InputState
     {
         union
         {
@@ -25,7 +30,13 @@ namespace LBE
                 unsigned char caplock : 1;
                 unsigned char numlock : 1;
             };
-            int mods = 0;
+            unsigned char mods = 0;
         };
+
+        void Output()
+        {
+            std::cout << "  state = " << std::bitset<8>(state) << std::endl;
+            std::cout << "  mods  = " << std::bitset<8>(mods) << std::endl;
+        }
     };
 }

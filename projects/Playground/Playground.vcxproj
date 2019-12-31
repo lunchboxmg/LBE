@@ -20,32 +20,32 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{57D9BE62-0662-44DC-A502-AC570791F81F}</ProjectGuid>
-    <RootNamespace>LBE</RootNamespace>
+    <ProjectGuid>{14CF7B61-65A2-4D9B-BF65-657019E3C02A}</ProjectGuid>
+    <RootNamespace>Playground</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -69,17 +69,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\bin\$(Configuration)-$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <TargetName>lbe_core_d</TargetName>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)..\bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <TargetName>lbe_core_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -91,45 +89,35 @@
     <OutDir>$(SolutionDir)..\bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_GLFW_WIN32;_CRT_SECURE_NO_WARNINGS;LBE_DEBUG;LBE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\LBE\source\;$(SolutionDir)\..\LBE\thirdparty\glfw\include\;$(SolutionDir)\..\LBE\thirdparty\glad\include\;$(SolutionDir)\..\LBE\thirdparty\glm\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-    <Lib>
-      <AdditionalDependencies>opengl32.lib</AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
-    </Lib>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_GLFW_WIN32;_CRT_SECURE_NO_WARNINGS;LBE_DEBUG;LBE_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;LBE_STATIC_LIB;LBE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\LBE\source\;$(SolutionDir)\..\LBE\thirdparty\glfw\include\;$(SolutionDir)\..\LBE\thirdparty\glad\include\;$(SolutionDir)\..\LBE\thirdparty\glm\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\LBE\source\;$(SolutionDir)..\LBE\thirdparty\glfw\include\;$(SolutionDir)..\LBE\thirdparty\glad\include\;$(SolutionDir)..\LBE\thirdparty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;lbe_core_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
-    <Lib>
-      <AdditionalDependencies>opengl32.lib</AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
-    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;LBE_STATIC_LIB;LBE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\LBE\source\;$(SolutionDir)..\LBE\thirdparty\glfw\include\;$(SolutionDir)..\LBE\thirdparty\glad\include\;$(SolutionDir)..\LBE\thirdparty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;lbe_core_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -139,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\LBE\source\;$(SolutionDir)\..\LBE\thirdparty\glfw\include\;$(SolutionDir)\..\LBE\thirdparty\glad\include\;$(SolutionDir)\..\LBE\thirdparty\glm\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\LBE\source\;$(SolutionDir)..\LBE\thirdparty\glfw\include\;$(SolutionDir)..\LBE\thirdparty\glad\include\;$(SolutionDir)..\LBE\thirdparty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,14 +135,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -164,7 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\LBE\source\;$(SolutionDir)\..\LBE\thirdparty\glfw\include\;$(SolutionDir)\..\LBE\thirdparty\glad\include\;$(SolutionDir)\..\LBE\thirdparty\glm\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\LBE\source\;$(SolutionDir)..\LBE\thirdparty\glfw\include\;$(SolutionDir)..\LBE\thirdparty\glad\include\;$(SolutionDir)..\LBE\thirdparty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -172,47 +152,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\LBE\source\input\LbeInputState.hpp" />
-    <ClInclude Include="..\..\LBE\source\input\LbeKeyboard.hpp" />
-    <ClInclude Include="..\..\LBE\source\input\LbeMouse.hpp" />
-    <ClInclude Include="..\..\LBE\source\LbeCore.hpp" />
-    <ClInclude Include="..\..\LBE\source\LbeExports.hpp" />
-    <ClInclude Include="..\..\LBE\source\platform\LbeApplication.hpp" />
-    <ClInclude Include="..\..\LBE\source\platform\LbeClock.hpp" />
-    <ClInclude Include="..\..\LBE\source\platform\LbeWindow.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\LBE\source\input\LbeKeyboard.cpp" />
-    <ClCompile Include="..\..\LBE\source\input\LbeMouse.cpp" />
-    <ClCompile Include="..\..\LBE\source\platform\LbeApplication.cpp" />
-    <ClCompile Include="..\..\LBE\source\platform\LbeClock.cpp" />
-    <ClCompile Include="..\..\LBE\source\platform\LbeWindow.cpp" />
-    <ClCompile Include="..\..\LBE\thirdparty\glad\src\glad.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\context.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\egl_context.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\init.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\input.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\monitor.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\osmesa_context.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\vulkan.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\wgl_context.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_init.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_joystick.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_monitor.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_thread.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_time.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_window.c" />
-    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\window.c" />
+    <ClCompile Include="..\..\Playground\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

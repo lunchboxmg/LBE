@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
 #include "LbeApplication.hpp"
 
 namespace // GLFW CALLBACKS
@@ -13,7 +14,7 @@ namespace // GLFW CALLBACKS
     }
 }
 
-LBE::Application::Application():
+LBE::Application::Application() :
     mKeyboard(),
     mMouse(),
     mWindow()
@@ -23,7 +24,8 @@ LBE::Application::Application():
 
 LBE::Application::~Application()
 {
-
+    if (mInitialized)
+        glfwTerminate();
 }
 
 int LBE::Application::Initialize(unsigned int aWidth, unsigned int aHeight, const char* aTitle)
@@ -68,6 +70,28 @@ int LBE::Application::Initialize(unsigned int aWidth, unsigned int aHeight, cons
     // TODO: MOUSE CALLBACK HERE
     // TODO: SCROLL CALLBACK HERE
 
+    mClock.Initialize();
     mInitialized = true;
     return 1;
+}
+
+void LBE::Application::Update()
+{
+    mClock.Update();
+    mKeyboard.Update();
+    glfwPollEvents();
+}
+
+void LBE::Application::Start()
+{
+    while (true)
+    {
+        Update();
+        unsigned char done = mKeyboard.IsKeyPressed(GLFW_KEY_ESCAPE);
+        if (done) break;
+
+        KeyState a = mKeyboard.GetKeyState(GLFW_KEY_A);
+        if (a.state)
+            a.Output();
+    }
 }

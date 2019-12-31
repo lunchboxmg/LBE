@@ -13,5 +13,111 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{0258aced-6631-4de9-b35a-b8a623b571ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{ed909106-4350-41cb-bbd6-ff96e5c7f47a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty">
+      <UniqueIdentifier>{c5a835db-749a-41d8-ac07-76cb9af4be9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad">
+      <UniqueIdentifier>{34c8afb2-93ea-495d-a1e9-3bce798cb35c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glfw">
+      <UniqueIdentifier>{6ed4a5f1-7c6f-438e-b9e4-ce2d75a66e0c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\LBE\source\LbeCore.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\LbeExports.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\input\LbeInputState.hpp">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\input\LbeKeyboard.hpp">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\input\LbeMouse.hpp">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\platform\LbeApplication.hpp">
+      <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\platform\LbeClock.hpp">
+      <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LBE\source\platform\LbeWindow.hpp">
+      <Filter>platform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\LBE\source\input\LbeKeyboard.cpp">
+      <Filter>input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\source\input\LbeMouse.cpp">
+      <Filter>input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\source\platform\LbeApplication.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\source\platform\LbeClock.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\source\platform\LbeWindow.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glad\src\glad.c">
+      <Filter>thirdparty\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\egl_context.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\osmesa_context.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\wgl_context.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_init.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_joystick.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_monitor.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_thread.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_time.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_window.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\context.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\init.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\input.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\monitor.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\vulkan.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LBE\thirdparty\glfw\src\window.c">
+      <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

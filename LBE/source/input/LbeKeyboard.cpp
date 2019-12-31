@@ -18,13 +18,9 @@ LBE::Keyboard::~Keyboard()
 
 void LBE::Keyboard::Update()
 {
-    // COPY PREVIOUS STATES AND CLEAR THE CURRENT STATES
     for (int i = 0; i < 1024; i++)
     {
-        mStatesPrev[i].state = mStates[i].state;
-        mStatesPrev[i].mods = mStates[i].mods;
-        mStates[i].state = 0;
-        mStates[i].mods = 0;
+        mStates[i].state = mStates[i].held ? 1 << 1 : 0;
     }
 }
 
@@ -32,20 +28,17 @@ void LBE::Keyboard::HandleEvent(int aKey, int aScancode, int aAction, int aMods)
 {
     if (0 <= aKey && aKey <= 1024)
     {
-        // LOOKUP glfwGetWindowUserPointer
-        InputState prev = mStatesPrev[aKey];
         if (aAction == GLFW_PRESS)
         {
-            if (prev.pressed)
-                mStates[aKey].held = 1;
-            else
-                mStates[aKey].pressed = 1;
+            mStates[aKey].pressed = 1;
+            mStates[aKey].held = 1;
         }
         if (aAction == GLFW_RELEASE)
         {
             mStates[aKey].held = 0;
-            mStates[aKey].released = 0;
+            mStates[aKey].released = 1;
         }
         mStates[aKey].mods = aMods;
+        //mStates[aKey].state |= (aMods << 3);
     }
 }

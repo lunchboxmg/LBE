@@ -7,7 +7,7 @@
 
 namespace LBE
 {
-    typedef InputState KeyState;
+    struct LBE_API KeyState : InputState {};
 
     class LBE_API Keyboard
     {
@@ -31,6 +31,7 @@ namespace LBE
         bool IsKeyReleased(unsigned int aKeyCode) { return mStates[aKeyCode].released; }
 
         KeyState GetKeyState(unsigned int aKeyCode) { return mStates[aKeyCode]; }
+        KeyState GetKeyPrevState(unsigned int aKeyCode) { return mStatesPrev[aKeyCode]; }
     };
 
     class KeyEvent

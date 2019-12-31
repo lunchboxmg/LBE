@@ -1,13 +1,13 @@
 #pragma once
 
-#include "glfw3.h"
+#include <GLFW/glfw3.h>
 
 #include "LbeExports.hpp"
 #include "LbeInputState.hpp"
 
 namespace LBE
 {
-    struct MouseButtonState : InputState
+    struct LBE_API MouseButtonState : InputState
     {
         // INCLUDE MOUSE POSITION ON EVENT OCCURANCE
         float x = 0.0f;

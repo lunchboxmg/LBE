@@ -1,12 +1,14 @@
 #pragma once
 
-#include "glad/glad.h";
-#include "glfw3.h"
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include "LbeExports.hpp"
-#include "LbeKeyboard.hpp"
-#include "LbeMouse.hpp"
 #include "LbeWindow.hpp"
+
+#include "input/LbeKeyboard.hpp"
+#include "input/LbeMouse.hpp"
+#include "LbeClock.hpp"
 
 namespace LBE
 {
@@ -17,6 +19,7 @@ namespace LBE
         Keyboard mKeyboard;
         Mouse mMouse;
         Window mWindow;
+        Clock mClock;
 
         bool mInitialized = false;
 
@@ -27,10 +30,15 @@ namespace LBE
 
         int Initialize(unsigned int aWidth, unsigned int aHeight, const char* aTitle);
 
+        void Start();
+
+        void Update();
+
         bool IsInitialized() { return mInitialized; }
 
         Keyboard& GetKeyboard() { return mKeyboard; }
         Mouse& GetMouse() { return mMouse; }
         Window& GetWindow() { return mWindow; }
+
     };
 }

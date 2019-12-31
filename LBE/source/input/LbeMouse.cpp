@@ -1,8 +1,6 @@
 #include "LbeMouse.hpp"
 
-using namespace LBE;
-
-Mouse::Mouse():
+LBE::Mouse::Mouse():
     mX(0.0f),
     mY(0.0f),
     mDeltaX(0.0f),
@@ -23,17 +21,17 @@ Mouse::Mouse():
     }
 }
 
-Mouse::~Mouse()
+LBE::Mouse::~Mouse()
 {
 
 }
 
-void Mouse::Update()
+void LBE::Mouse::Update()
 {
 
 }
 
-void Mouse::HandleEvents(GLFWwindow* aWindow, int aButton, int aAction, int aMods)
+void LBE::Mouse::HandleEvents(GLFWwindow* aWindow, int aButton, int aAction, int aMods)
 {
 
 }
