@@ -15,7 +15,7 @@ int main()
     LBE::KeyState esc = app->GetKeyboard().GetKeyState(GLFW_KEY_ESCAPE);
     std::cout << "[ESC] KEY STATE :" << std::endl;
     std::cout << "  state = " << std::bitset<8>(esc.state) << std::endl;
-    std::cout << "  mods  = " << std::bitset<32>(esc.mods) << std::endl;
+    std::cout << "  mods  = " << std::bitset<8>(esc.mods) << std::endl;
     delete app;
 
     return 1;

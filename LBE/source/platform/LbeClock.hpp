@@ -18,16 +18,22 @@ namespace LBE
         double       mDt;
         unsigned int mFrameCount;
 
+        double       mInitTime;
+        double       mStartTime;
+
     public:
 
         Clock();
         ~Clock();
 
-        void         Initialize();
+        void         Initialize()     { mInitTime = glfwGetTime(); }
+        void         Start()          { mStartTime = glfwGetTime(); }
 
         void         Update();
 
         std::time_t  GetWallTime();
+
+        double       GetFps()         { return mDt > 0.0 ? 1.0/mDt : 0.0;}
 
         double       GetDt()          { return mDt;}
         double       GetCurrentTime() { return mCurrentTime; }

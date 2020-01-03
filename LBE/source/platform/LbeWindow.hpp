@@ -22,13 +22,13 @@ namespace LBE
         Window();
         ~Window();
 
-        GLFWwindow* Initialize(unsigned int aWidth, unsigned int aHeight, const char* aTitle);
+        GLFWwindow*  Initialize(unsigned int aWidth, unsigned int aHeight, const char* aTitle);
 
-        GLFWwindow* GetContext() { return mContext; }
-        unsigned int GetWidth() { return mWidth; }
-        unsigned int GetHeight() { return mHeight; }
-        float GetAspect() { return mAspect; }
-        bool IsCloseRequested() { return mCloseRequested; }
-        bool IsInitialized() { return mInitialized; }
+        GLFWwindow*  GetContext()       { return mContext; }
+        unsigned int GetWidth()         { return mWidth; }
+        unsigned int GetHeight()        { return mHeight; }
+        float        GetAspect()        { return mAspect; }
+        bool         IsCloseRequested() { return mCloseRequested; }
+        bool         IsInitialized()    { return mInitialized; }
     };
 }

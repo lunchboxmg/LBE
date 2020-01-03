@@ -15,11 +15,6 @@ namespace LBE
     {
     }
 
-    void Clock::Initialize()
-    {
-        mCurrentTime = glfwGetTime();
-    }
-
     void Clock::Update()
     {
         double now = glfwGetTime();

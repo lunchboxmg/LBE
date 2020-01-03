@@ -190,6 +190,8 @@
     <ClInclude Include="..\..\LBE\source\platform\LbeApplication.hpp" />
     <ClInclude Include="..\..\LBE\source\platform\LbeClock.hpp" />
     <ClInclude Include="..\..\LBE\source\platform\LbeWindow.hpp" />
+    <ClInclude Include="graphics\LbeShader.hpp" />
+    <ClInclude Include="graphics\LbeUniforms.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\LBE\source\input\LbeKeyboard.cpp" />
@@ -213,6 +215,7 @@
     <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_time.c" />
     <ClCompile Include="..\..\LBE\thirdparty\glfw\src\win32_window.c" />
     <ClCompile Include="..\..\LBE\thirdparty\glfw\src\window.c" />
+    <ClCompile Include="graphics\LbeUniforms.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

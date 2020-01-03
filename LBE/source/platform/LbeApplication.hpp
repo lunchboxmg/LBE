@@ -1,5 +1,9 @@
 #pragma once
 
+// TODO: FOR THE MOMENT THIS FILE IS FOR JUST WINDOWS USING GLFW.
+// LATER, THIS WILL BECOME A BASE CLASS THAT WILL BE SUBCLASSED FOR EACH
+// PLATFORM TYPE / PLATFORM PACKAGE (IE: WINDOWS/GLFW)
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -32,13 +36,18 @@ namespace LBE
 
         void Start();
 
-        void Update();
+        virtual void Update();
 
         bool IsInitialized() { return mInitialized; }
 
         Keyboard& GetKeyboard() { return mKeyboard; }
         Mouse& GetMouse() { return mMouse; }
         Window& GetWindow() { return mWindow; }
+        Clock& GetClock() { return mClock; }
+
+    private:
+
+        void InternalUpdate();
 
     };
 }

@@ -28,6 +28,9 @@
     <Filter Include="thirdparty\glfw">
       <UniqueIdentifier>{6ed4a5f1-7c6f-438e-b9e4-ce2d75a66e0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="graphics">
+      <UniqueIdentifier>{38018253-10a9-48dc-ac74-3cbf7eb166da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\LBE\source\LbeCore.hpp">
@@ -53,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="..\..\LBE\source\platform\LbeWindow.hpp">
       <Filter>platform</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\LbeShader.hpp">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\LbeUniforms.hpp">
+      <Filter>graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,9 @@
     </ClCompile>
     <ClCompile Include="..\..\LBE\thirdparty\glfw\src\window.c">
       <Filter>thirdparty\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\LbeUniforms.cpp">
+      <Filter>graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -70,28 +70,48 @@ int LBE::Application::Initialize(unsigned int aWidth, unsigned int aHeight, cons
     // TODO: MOUSE CALLBACK HERE
     // TODO: SCROLL CALLBACK HERE
 
+    // INITIALIZE ADDITIONAL COMPONENTS
     mClock.Initialize();
     mInitialized = true;
     return 1;
 }
 
-void LBE::Application::Update()
+void LBE::Application::InternalUpdate()
 {
+    // DO OUR OWN INTERNAL UPDATES FIRST
     mClock.Update();
     mKeyboard.Update();
     glfwPollEvents();
+
+    // CALL USER SUPPLIED UPDATE
+    Update();
 }
 
 void LBE::Application::Start()
 {
+    mClock.Start();
     while (true)
     {
-        Update();
+        InternalUpdate();
+        // TODO: CHECK TERMINATION CONDITION HERE
+        if (glfwWindowShouldClose(mWindow.GetContext())) break;
         unsigned char done = mKeyboard.IsKeyPressed(GLFW_KEY_ESCAPE);
         if (done) break;
+
+        glEnable(GL_DEPTH_TEST);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClearColor(0.2, 0.2, 0.2, 1.0);
+
+        glfwSwapBuffers(mWindow.GetContext());
 
         KeyState a = mKeyboard.GetKeyState(GLFW_KEY_A);
         if (a.state)
             a.Output();
     }
+}
+
+// VIRTUAL
+void LBE::Application::Update()
+{
+
 }

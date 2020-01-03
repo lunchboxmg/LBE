@@ -24,6 +24,7 @@ void LBE::Keyboard::Update()
     }
 }
 
+// TODO: THIS NEEDES TO BE THE RESPONSIBILITY OF THE APPLICATION
 void LBE::Keyboard::HandleEvent(int aKey, int aScancode, int aAction, int aMods)
 {
     if (0 <= aKey && aKey <= 1024)
