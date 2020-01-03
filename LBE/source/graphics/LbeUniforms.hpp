@@ -39,9 +39,6 @@ namespace LBE
 
     public:
 
-        UniformFloat(char* aName, int aProgramId) :
-            Uniform(aName, aProgramId) {}
-
         virtual void Load(float aValue);
 
     };
